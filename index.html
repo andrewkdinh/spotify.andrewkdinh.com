@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+Hello! Welcome to the source code of my personal website I made from scratch.
+Want to learn more? Feel free to contact me at me (at) andrewkdinh (dot) com.
+-->
+
+<!--
+Version: OpenPGP.js v4.6.2
+Comment: https://openpgpjs.org
+xjMEXFFDbxYJKwYBBAHaRw8BAQdAzZSE3iOBbvTEury4SC0gMpmz308im9v0
+bob+t8n2ASnNOSJhbmRyZXdrZGluaEBwcm90b25tYWlsLmNvbSIgPGFuZHJl
+d2tkaW5oQHByb3Rvbm1haWwuY29tPsJ3BBAWCgAfBQJcUUNvBgsJBwgDAgQV
+CAoCAxYCAQIZAQIbAwIeAQAKCRCtWJ9G+9xC9qU1AQCZLQoSxWqsZv+/0AKO
+ioNjA0CMydRD99UZr/7uIswPWQD/RYIbwniXopGCCGOGFRaMgr3jdrPiTVq9
+FEyTcrnWMQ/OOARcUUNvEgorBgEEAZdVAQUBAQdAOPKjRn/EmJQUCWbnwiM9
+zcQp0KJmesnhVTh/Ja1t2BcDAQgHwmEEGBYIAAkFAlxRQ28CGwwACgkQrVif
+RvvcQvZigwD+Kovjw0NQzgf8Q5SBhiS65EZ37MWLUOdP0VrTEiVuOnoBAPTg
+tffRRsorIL6z11w5dJyOS6VimCfAh49xR/4cqBgN
+=RVIZ
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Andrew Dinh - Software Engineer</title>
+
+    <!-- https://www.favicon-generator.org/ -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <meta name="description" content="Andrew Dinh - Software engineer developing a better feature">
+    <meta name="keywords" content="Andrew Dinh, Andrew K Dinh, andrewkdinh, Gilroy, GECA, Gavilan College, Dr. TJ Owens Gilroy Early College Academy, computer science, UC Berkeley, University of California Berkeley, Apple, Proactive Intelligence">
+    <meta name="author" content="Andrew Dinh">
+
+    <!-- CSS -->
+    <!-- https://stackoverflow.com/a/46750893 -->
+    <!-- https://www.w3.org/TR/CSS21/media.html%23media-types -->
+    <link rel="stylesheet" media="all" href="css/general.css">
+    <!-- <link rel="stylesheet" media="screen,print" href="css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" media="screen" href="css/github-dark.min.css"> -->
+
+    <!-- JavaScript -->
+    <!--[if IE]> <script defer src="https://polyfill.io/v3/polyfill.min.js?features=default%2Csmoothscroll"></script> <![endif]-->
+    <!--
+    <script defer src="js/jquery-3.5.1.min.js"></script>
+    <script defer src="js/bootstrap.bundle.min.js"></script>
+    <script defer src="js/highlight.min.js"></script>
+    -->
+    <script defer src="js/general.js"></script>
+
+    <!-- Prefetch content -->
+    <!-- <link rel="prefetch" href="images/logo.png"> -->
+
+    <!-- Prefetch domains -->
+    <link rel="preconnect" href="https://plausible.andrewkdinh.com/" crossorigin>
+    <link rel="dns-prefetch" href="https://plausible.andrewkdinh.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Andrew Dinh">
+    <meta property="og:description" content="Andrew Dinh - Software engineer devloping a better feature">
+    <meta property="og:site_name" content="Andrew Dinh">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://andrewkdinh.com/images/logo.png">
+    <meta property="og:url" content="https://andrewkdinh.com">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:title" content="Andrew Dinh">
+    <meta name="twitter:description" content="Andrew Dinh - Software engineer developing a better feature">
+    <meta name="twitter:image" content="/images/logo.png">
+    <meta name="twitter:site" content="@andrewkdinh">
+    <meta name="twitter:creator" content="@andrewkdinh">
+
+    <!-- Dublin Core -->
+    <!-- https://paladini.github.io/dublin-core-basics/ -->
+    <meta name="DC.Title" content="Andrew Dinh - Software engineer devloping a better feature">
+    <meta name="DC.Creator" content="Andrew Dinh">
+    <meta name="DC.Subject" content="Andrew Dinh">
+    <meta name="DC.Description" content="Andrew Dinh - Software engineer devloping a better feature">
+    <meta name="DC.Publisher" content="Andrew Dinh">
+    <meta name="DC.Contributor" content="Andrew Dinh">
+    <meta name="DC.Type" content="text">
+    <meta name="DC.Format" content="text/html">
+    <meta name="DC.Identifier" content="https://andrewkdinh.com">
+    <meta name="DC.Source" content="https://andrewkdinh.com">
+    <meta name="DC.Language" content="en">
+    <meta name="DC.Coverage" content="California, United States of America">
+    <meta name="DC.Rights" content="Copyright Andrew Dinh 2022">
+
+    <!-- https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html -->
+    <!--
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    -->
+
+    <!-- <meta name="format-detection" content="telephone=no"> -->
+    <!-- Stay standalone: https://gist.github.com/irae/1042167 -->
+
+    <!-- https://developers.google.com/search/reference/robots_meta_tag -->
+    <meta name="robots" content="index, all">
+
+    <!-- https://stackoverflow.com/a/24428525 -->
+    <!-- <base target="_blank"> -->
+
+    <!-- https://web.dev/canonical/ -->
+    <link rel="canonical" href="https://andrewkdinh.com">
+
+    <!-- Web Mentions -->
+    <link rel="webmention" href="https://webmention.io/andrewkdinh.com/webmention">
+    <link rel="pingback" href="https://webmention.io/andrewkdinh.com/xmlrpc">
+
+    <!-- Request Dark Reader to disable itself -->
+    <!-- https://github.com/darkreader/darkreader/blob/main/CONTRIBUTING.md#disabling-dark-reader-on-your-site -->
+    <meta name="darkreader-lock">
+
+    <style>
+        /* Fonts here to reduce chaining requests */
+        @font-face {
+            font-family: "Arca Majora 3";
+            /* src: url(webfonts/ArcaMajora3-Bold.otf); */
+            src: url('webfonts/ArcaMajora3-Bold-subset.woff2') format('woff2'),
+                url('webfonts/ArcaMajora3-Bold-subset.woff') format('woff');
+            font-display: swap; /* https://web.dev/font-display/ */
+        }
+
+        body {
+            /* background-color: #0d1117 !important; */
+            background-color: #0d1117 !important;
+            color: #f2f1ef !important;
+        }
+
+        .h-card,
+        .svg-defs {
+            display: none;
+        }
+
+        .noscript-text {
+            color: red;
+        }
+    </style>
+
+    <!-- https://json-ld.org -->
+    <!-- https://validator.schema.org/ -->
+    <!-- https://search.google.com/structured-data/testing-tool -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Person",
+        "name": "Andrew Dinh",
+        "jobTitle": "Software Engineer",
+        "description": "Software engineer developing a better feature",
+        "inLanguage" : "en-US",
+        "isFamilyFriendly": "true",
+        "accountablePerson" : "Andrew Dinh",
+        "image": "https://andrewkdinh.com/images/profile.png",
+        "gender": "male",
+        "nationality": "United States",
+        "mainEntityOfPage": "https://andrewkdinh.com",
+        "keywords": [
+            "Andrew Dinh",
+            "Andrew K Dinh",
+            "andrewkdinh",
+            "Gilroy",
+            "GECA",
+            "Gavilan College",
+            "Dr. TJ Owens Gilroy Early College Academy",
+            "computer science",
+            "UC Berkeley",
+            "University of California Berkeley",
+            "Apple"
+        ],
+        "url": "https://andrewkdinh.com",
+        "alumniOf": [
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "University of California, Berkeley",
+                "alternateName": "UC Berkeley",
+                "hasMap": "https://www.openstreetmap.org/relation/2814221",
+                "url": "https://www.berkeley.edu",
+                "sameAs": "https://en.wikipedia.org/wiki/University_of_California%2C_Berkeley"
+            },
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "Gavilan College",
+                "hasMap": "https://www.openstreetmap.org/way/27413619",
+                "url": "https://www.gavilan.edu",
+                "sameAs": "https://en.wikipedia.org/wiki/Gavilan_College"
+            },
+            {
+                "@type": "HighSchool",
+                "name": "Dr. TJ Owens Gilroy Early College Academy",
+                "alternateName": [
+                    "GECA",
+                    "Gilroy Early College Academy"
+                ],
+                "hasMap": "https://www.openstreetmap.org/way/807679190",
+                "url": "https://geca.gilroyunified.org",
+                "sameAs": "https://en.wikipedia.org/wiki/Gilroy_Early_College_Academy"
+            }
+        ],
+        "worksFor": {
+            "@type": "Corporation",
+            "tickerSymbol": "AAPL",
+            "name": "Apple",
+            "legalName": "Apple Inc.",
+            "url": "https://www.apple.com",
+            "sameAs": "https://en.wikipedia.org/wiki/Apple_Inc."
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "California",
+            "addressCountry": "United States"
+        },
+        "sameAs": [
+            "https://github.com/andrewkdinh",
+            "https://www.linkedin.com/in/andrewkdinh-com",
+            "https://www.instagram.com/andrewkdinh/",
+            "https://t.me/andrewkdinh",
+            "https://www.facebook.com/andrewkdinh",
+            "https://keybase.io/andrewkdinh",
+            "https://twitter.com/andrewkdinh",
+            "https://www.reddit.com/u/andrewkdinh",
+            "https://social.privacytools.io/@andrewkdinh",
+            "https://fosstodon.org/@andrewkdinh",
+            "https://news.ycombinator.com/user?id=andrewkdinh",
+            "https://gitlab.com/andrewkdinh",
+            "https://hub.docker.com/u/andrewkdinh",
+            "https://about.me/andrewkdinh",
+            "https://www.buymeacoffee.com/andrewkdinh",
+            "https://www.fiverr.com/andrewkdinh",
+            "https://opencollective.com/andrewkdinh",
+            "https://www.patreon.com/andrewkdinh",
+            "https://repl.it/@andrewkdinh",
+            "https://devpost.com/andrewkdinh",
+            "https://dribbble.com/andrewkdinh",
+            "https://www.indiehackers.com/andrewkdinh",
+            "https://dev.to/andrewkdinh",
+            "https://getmakerlog.com/@andrewkdinh",
+            "https://medium.com/@andrewkdinh",
+            "https://vimeo.com/andrewkdinh",
+            "https://www.pinterest.com/andrewkdinh/",
+            "https://soundcloud.com/andrewkdinh",
+            "https://www.twitch.tv/andrewkdinh",
+            "https://andrewkdinh.tumblr.com/",
+            "https://unsplash.com/@andrewkdinh",
+            "https://kit.co/andrewkdinh",
+            "https://gumroad.com/andrewkdinh",
+            "https://www.behance.net/andrewkdinh",
+            "https://codepen.io/andrewkdinh",
+            "https://ko-fi.com/andrewkdinh",
+            "https://www.minds.com/andrewkdinh/",
+            "https://readup.com/@andrewkdinh",
+            "https://mix.com/andrewkdinh",
+            "https://www.notion.so/andrewkdinh",
+            "https://page.fyi/@andrewkdinh",
+            "https://rive.app/a/andrewkdinh",
+            "https://bandcamp.com/andrewkdinh",
+            "https://www.codechef.com/users/andrewkdinh",
+            "https://andrewkdinh.contently.com/",
+            "https://www.codewars.com/users/andrewkdinh",
+            "https://creativemarket.com/users/andrewkdinh",
+            "https://www.crunchyroll.com/user/andrewkdinh",
+            "https://designspiration.com/andrewkdinh",
+            "https://www.deviantart.com/andrewkdinh",
+            "https://www.discogs.com/user/andrewkdinh",
+            "https://disqus.com/by/andrewkdinh/",
+            "https://www.ebay.com/usr/andrewkdinh",
+            "https://www.eyeem.com/u/andrewkdinh",
+            "https://community.fandom.com/wiki/User:Andrewkdinh",
+            "https://www.gamespot.com/profile/andrewkdinh/",
+            "https://giphy.com/channel/andrewkdinh",
+            "https://www.goodreads.com/andrewkdinh",
+            "https://gurushots.com/andrewkdinh/",
+            "https://freesound.org/people/andrewkdinh/",
+            "https://www.house-mixes.com/profile/andrewkdinh",
+            "https://www.houzz.com/user/andrewkdinh",
+            "https://hubpages.com/@andrewkdinh",
+            "https://www.instructables.com/member/andrewkdinh/",
+            "https://issuu.com/andrewkdinh",
+            "https://imageshack.com/user/andrewkdinh",
+            "https://imgup.cz/andrewkdinh",
+            "https://andrewkdinh.itch.io/",
+            "https://www.kaggle.com/andrewkdinh",
+            "https://launchpad.net/~andrewkdinh",
+            "https://andrewkdinh.livejournal.com",
+            "https://www.memrise.com/user/andrewkdinh/",
+            "https://myspace.com/andrewkdinh",
+            "https://www.npmjs.com/~andrewkdinh",
+            "https://packagist.org/users/andrewkdinh/",
+            "https://www.pscp.tv/andrewkdinh",
+            "https://pcpartpicker.com/user/andrewkdinh/",
+            "https://app.photobucket.com/u/andrewkdinh",
+            "https://www.pinkbike.com/u/andrewkdinh/",
+            "https://www.pling.com/u/andrewkdinh/",
+            "https://www.opencode.net/andrewkdinh",
+            "https://www.opendesktop.org/u/andrewkdinh",
+            "https://www.polygon.com/users/andrewkdinh",
+            "https://rateyourmusic.com/~andrewkdinh",
+            "https://rubygems.org/profile/edit",
+            "https://scratch.mit.edu/users/andrewkdinh/",
+            "https://www.smashcast.tv/andrewkdinh",
+            "https://www.smule.com/andrewkdinh",
+            "https://www.sporcle.com/user/andrewkdinh/",
+            "https://www.speedrun.com/andrewkdinh/",
+            "https://tellonym.me/andrewkdinh",
+            "https://trakt.tv/users/andrewkdinh",
+            "https://www.tripadvisor.com/Profile/andrewkdinh",
+            "https://www.tradingview.com/u/andrewkdinh/",
+            "https://data.typeracer.com/pit/profile?user=andrewkdinh",
+            "https://www.virustotal.com/gui/user/andrewkdinh",
+            "https://www.wattpad.com/user/andrewkdinh",
+            "https://weheartit.com/Andrewkdinh",
+            "https://allmylinks.com/andrewkdinh",
+            "https://devrant.com/users/andrewkdinh",
+            "https://www.hackster.io/andrewkdinh",
+            "https://lab.pentestit.ru/profile/andrewkdinh",
+            "https://notabug.org/andrewkdinh",
+            "https://opensource.com/users/andrewkdinh",
+            "https://soylentnews.org/~andrewkdinh/",
+            "https://www.travellerspoint.com/users/andrewkdinh/",
+            "https://www.warriorforum.com/members/andrewkdinh.html",
+            "https://community.windy.com/user/andrewkdinh",
+            "https://ello.co/andrewkdinh",
+            "https://leanpub.com/u/andrewkdinh",
+            "https://andrewkdinh.imprint.to/",
+            "https://imprint.to/user/andrewkdinh",
+            "https://wheretofind.me/@andrewkdinh",
+            "https://codesandbox.io/u/andrewkdinh",
+            "https://jumpstart.me/profile/andrewkdinh",
+            "https://howdy.so/andrewkdinh",
+            "https://parler.com/profile/andrewkdinh",
+            "https://www.readylink.me/andrewkdinh",
+            "https://spacehey.com/andrewkdinh",
+            "https://www.joinentre.com/profile/andrewkdinh",
+            "https://capiche.fm/andrewkdinh",
+            "https://app.singlelink.co/u/andrewkdinh",
+            "https://indielog.com/user/andrewkdinh",
+            "https://www.myhryzn.com/profile/andrewkdinh",
+            "https://read.cv/andrewkdinh",
+            "https://znaplink.com/andrewkdinh",
+            "https://lyrn.link/andrewkdinh",
+            "https://www.causes.com/andrewkdinh",
+            "https://www.chess.com/member/andrewkdinh",
+            "https://binarysearch.com/@/andrewkdinh",
+            "https://ask.fm/andrewkdinh",
+            "https://leetcode.com/andrewkdinh/",
+            "https://trello.com/andrewkdinh",
+            "https://tryhackme.com/p/andrewkdinh",
+            "https://tldrlegal.com/users/andrewkdinh",
+            "https://quizlet.com/andrewkdinh",
+            "https://imgur.com/user/andrewkdinh",
+            "https://www.openhub.net/accounts/andrewkdinh",
+            "https://hackernoon.com/u/andrewkdinh",
+            "https://www.thiscodeworks.com/user/andrewkdinh",
+            "https://sellff.com/$/andrewkdinh",
+            "https://sleek.bio/andrewkdinh",
+            "https://volt.fm/andrewkdinh",
+            "https://andrewkdinh.myshopify.com",
+            "https://www.codecademy.com/profiles/andrewkdinh",
+            "https://www.tripit.com/people/andrewkdinh",
+            "https://hackmd.io/@andrewkdinh",
+            "https://jsfiddle.net/user/andrewkdinh/",
+            "https://fancy.com/andrewkdinh",
+            "https://coderwall.com/andrewkdinh",
+            "https://andrewkdinh.newgrounds.com/",
+            "https://andrewkdinh.weebly.com/",
+            "https://thoughts.com/members/andrewkdinh",
+            "https://www.colourlovers.com/lover/andrewkdinh",
+            "https://www.kickstarter.com/profile/andrewkdinh",
+            "https://www.kongregate.com/accounts/andrewkdinh",
+            "https://www.plurk.com/andrewkdinh",
+            "https://armorgames.com/user/andrewkdinh",
+            "https://slashdot.org/~andrewkdinh",
+            "https://www.diigo.com/profile/andrewkdinh",
+            "https://www.programmableweb.com/profile/andrewkdinh",
+            "https://www.blurb.com/user/andrewkdinh",
+            "https://www.edocr.com/user/andrewkdinh",
+            "https://www.slideserve.com/andrewkdinh",
+            "https://volt.fm/andrewkdinh",
+            "https://open.spotify.com/user/7d5c14o2mqv02c4wd18qt3yei",
+            "https://stacky.app/andrewkdinh",
+            "https://en.pronouns.page/@andrewkdinh",
+            "https://linktr.ee/andrewkdinh",
+            "https://99designs.com/profiles/andrewkdinh",
+            "https://genius.com/andrewkdinh",
+            "https://www.codementor.io/andrewkdinh",
+            "https://arc.dev/@andrewkdinh",
+            "https://auth.geeksforgeeks.org/user/andrewkdinh",
+            "https://www.producthunt.com/@andrewkdinh",
+            "https://www.slant.co/users/andrewkdinh",
+            "https://pizzaparteee.com/members/andrewkdinh",
+            "https://sayhey.to/andrewkdinh",
+            "https://webflow.com/andrewkdinh",
+            "https://www.strava.com/athletes/andrewkdinh",
+            "https://www.flickr.com/people/andrewkdinh",
+            "https://www.joinclubhouse.com/@andrewkdinh",
+            "https://mmm.page/andrewkdinh.main",
+            "https://andrewkdinh.straw.page/",
+            "https://www.garnet.app/andrewkdinh",
+            "https://mssg.me/andrewkdinh",
+            "https://biotree.vercel.app/andrewkdinh",
+            "https://midnight.pub/~andrewkdinh",
+            "https://andrewkdinh.midnight.pub",
+            "https://www.fanpassly.com/u/andrewkdinh",
+            "https://opengeofiction.net/user/andrewkdinh",
+            "https://closefriend.io/#/c/andrewkdinh",
+            "https://dope.link/andrewkdinh",
+            "https://fwrd.page/?andrewkdinh",
+            "https://finelin.com/andrewkdinh/socialprofiles",
+            "https://bodyspace.bodybuilding.com/andrewkdinh",
+            "https://www.polarsteps.com/andrewkdinh",
+            "https://www.mixcloud.com/andrewkdinh/",
+            "https://blip.fm/andrewkdinh",
+            "https://gfycat.com/@andrewkdinh",
+            "https://www.freelancer.com/u/andrewkdinh",
+            "https://github.community/u/andrewkdinh/",
+            "https://audiojungle.net/user/andrewkdinh",
+            "https://youpic.com/photographer/andrewkdinh/",
+            "https://www.last.fm/user/andrewkdinh",
+            "https://www.depop.com/andrewkdinh/",
+            "https://en.wikipedia.org/wiki/User:Andrewkdinh",
+            "https://myanimelist.net/profile/andrewkdinh",
+            "https://steamcommunity.com/id/andrewkdinh/",
+            "https://andrewkdinh.fandom.com",
+            "https://ninfex.com/user?id=andrewkdinh",
+            "https://bookshlf.com/user/andrewkdinh",
+            "https://venme.at/@andrewkdinh",
+            "https://andrewkdinh.vsble.me/",
+            "https://laasy.tech/andrewkdinh/index",
+            "https://discussions.apple.com/profile/andrewkdinh",
+            "https://rive.app/andrewkdinh/",
+            "https://accounts.fedoraproject.org/user/andrewkdinh/",
+            "https://discuss.atom.io/u/andrewkdinh/",
+            "https://bitcoinforum.com/profile/andrewkdinh/",
+            "https://www.capfriendly.com/users/andrewkdinh",
+            "https://community.cloudflare.com/u/andrewkdinh",
+            "https://hubski.com/user/andrewkdinh",
+            "https://gitee.com/andrewkdinh",
+            "https://lichess.org/@/andrewkdinh",
+            "https://ourdjtalk.com/djs/andrewkdinh.8091/",
+            "https://www.shitpostbot.com/user/andrewkdinh",
+            "https://promodj.com/andrewkdinh",
+            "https://splits.io/users/andrewkdinh",
+            "https://ch.tetr.io/u/andrewkdinh",
+            "https://robertsspaceindustries.com/citizens/andrewkdinh",
+            "https://www.ultimate-guitar.com/u/andrewkdinh",
+            "https://www.authorstream.com/andrewkdinh/",
+            "https://forum.sublimetext.com/u/andrewkdinh",
+            "https://forums.whonix.org/u/andrewkdinh",
+            "https://kwork.com/user/andrewkdinh",
+            "https://egpu.io/forums/profile/andrewkdinh/",
+            "https://www.sellercommunity.com/t5/user/viewprofilepage/user-id/379225",
+            "https://micro.blog/andrewkdinh",
+            "https://asciinema.org/~andrewkdinh",
+            "https://snapgotap.com/andrewkdinh",
+            "https://prosepen.com/p/andrewkdinh",
+            "https://uid.me/andrewkdinh",
+            "https://www.cakeresume.com/me/andrewkdinh",
+            "https://archive.org/details/@andrewkdinh",
+            "https://castyr.com/profile/andrewkdinh",
+            "https://make.rs/@andrewkdinh",
+            "https://isbusy.app/s/andrewkdinh",
+            "https://andrewkdinh.galllery.co/",
+            "https://thankme.in/profile.php?u=andrewkdinh",
+            "https://polygram.netlify.app/u/andrewkdinh",
+            "https://tipme.fun/andrewkdinh",
+            "https://andrewkdinh.webcrate.co/",
+            "https://bio.link/andrewkdinh",
+            "https://andrewkdinh.bio.link/",
+            "https://ladder.to/users/andrewkdinh",
+            "https://fadd.io/andrewkdinh",
+            "https://andrewkdinh.lemonsqueezy.com/",
+            "https://withkoji.com/@andrewkdinh",
+            "https://www.thumbnailgame.com/user/andrewkdinh",
+            "https://andrewkdinh.blogody.com/",
+            "https://andrewkdinh.domainport.io/",
+            "https://creavor.com/andrewkdinh/main",
+            "https://ayo.so/andrewkdinh",
+            "https://swif.link/andrewkdinh",
+            "https://triller.co/@andrewkdinh",
+            "https://www.polywork.com/andrewkdinh",
+            "https://cal.berkeley.edu/andrewkdinh",
+            "https://www.shlinkedin.com/sh/andrewkdinh",
+            "https://minus.social/members/andrewkdinh/",
+            "https://andrewkdinh.withyouand.me/",
+            "https://urlt.bio/andrewkdinh",
+            "https://crypto-to.me/andrewkdinh",
+            "https://hey.cafe/p/andrewkdinh",
+            "https://andrewkdinh.linksup.me/",
+            "https://solo.to/andrewkdinh",
+            "https://linkyy.co/andrewkdinh/",
+            "https://little.link/andrewkdinh",
+            "https://bibly.me/andrewkdinh",
+            "https://solo.so/andrewkdinh",
+            "https://www.lifeofdiscipline.com/andrewkdinh",
+            "https://anilist.co/user/andrewkdinh/",
+            "https://kommunity.com/@andrewkdinh",
+            "https://papyrus.so/@andrewkdinh",
+            "https://goodz.id/andrewkdinh",
+            "https://www.lance-app.com/andrewkdinh",
+            "https://racket.com/andrewkdinh",
+            "https://www.inaturalist.org/people/andrewkdinh",
+            "https://www.gittr.ee/andrewkdinh",
+            "https://andrewkdinh.writeas.com/",
+            "https://clink.bio/andrewkdinh",
+            "https://favelent.com/profile/andrewkdinh",
+            "https://www.msukwini.com/@andrewkdinh/",
+            "https://linkin.bi/o/andrewkdinh",
+            "https://statuspage.spike.sh/andrewkdinh",
+            "https://andrewkdinh.static.app/",
+            "https://www.airliners.net/user/andrewkdinh/profile",
+            "https://ask.fedoraproject.org/u/andrewkdinh/",
+            "https://www.clozemaster.com/players/andrewkdinh",
+            "https://crowdin.com/profile/andrewkdinh",
+            "https://www.hexrpg.com/userinfo/andrewkdinh",
+            "https://gosocial.io/users/andrewkdinh",
+            "https://kingdom.so/andrewkdinh",
+            "https://ask.rip/en/u/andrewkdinh",
+            "https://kaashi.org/@andrewkdinh",
+            "https://tourin.fm/fans/andrewkdinh",
+            "https://marble.app/andrewkdinh",
+            "https://tinyletter.com/andrewkdinh",
+            "https://bookwyrm.social/user/andrewkdinh",
+            "https://www.duolingo.com/profile/andrewkdinh",
+            "https://coortera.com/profile/andrewkdinh/",
+            "https://linkstree.co/andrewkdinh",
+            "https://www.poeticpost.com/u/andrewkdinh",
+            "https://www.posiviber.com/andrewkdinh/",
+            "https://wiki.vg/User:Andrewkdinh",
+            "https://ninjakiwi.com/profile/andrewkdinh",
+            "https://www.myminifactory.com/users/andrewkdinh",
+            "https://www.itemfix.com/c/andrewkdinh",
+            "https://cash.app/$andrewkdinh",
+            "https://listenbrainz.org/user/andrewkdinh/",
+            "https://andrewkdinh.stck.me/",
+            "https://just1.app/andrewkdinh",
+            "https://hardcover.app/@andrewkdinh",
+            "https://prolific.bio/andrewkdinh",
+            "https://andrewkdinh.mataroa.blog/",
+            "https://music.sleevenote.com/@andrewkdinh",
+            "https://lanceid.com/andrewkdinh",
+            "https://dotcal.co/andrewkdinh",
+            "https://www.showwcase.com/andrewkdinh",
+            "https://app.travelfacets.com/profile/andrewkdinh/",
+            "https://untappd.com/user/andrewkdinh",
+            "https://linksome.me/andrewkdinh/",
+            "https://mana.live/andrewkdinh",
+            "https://www.thevouchapp.com/user/andrewkdinh",
+            "https://pnpl.io/andrewkdinh",
+            "https://www.spidergain.com/@andrewkdinh",
+            "https://oneitem.store/andrewkdinh",
+            "https://veklar.com/andrewkdinh",
+            "https://bummer.me/andrewkdinh",
+            "https://goodprofile.me/andrewkdinh",
+            "https://activelink.io/andrewkdinh",
+            "https://heyhey.to/andrewkdinh",
+            "https://andrewkdinh.postcard.page/",
+            "https://app.myqoob.com/andrewkdinh",
+            "https://nano.site/andrewkdinh",
+            "https://giftapp.com/andrewkdinh",
+            "https://fe.disroot.org/@andrewkdinh",
+            "https://libertylinks.io/andrewkdinh",
+            "https://cal.com/andrewkdinh",
+            "https://en.tipeee.com/user/andrewkdinh",
+            "https://www.lemon8-app.com/andrewkdinh",
+            "https://andruwu.com"
+        ]
+    }
+    </script>
+
+</head>
+
+<body data-spy="scroll" data-target="#akd-navbar" data-offset="30">
+    <a class="skip-link" target="_self" href="#main">Skip to main content</a>
+
+    <!-- https://icomoon.io/app -->
+    <svg class="svg-defs" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+    <symbol id="icon-folder" viewBox="0 0 32 32">
+        <path d="M14 4l4 4h14v22h-32v-26z"></path>
+    </symbol>
+    <symbol id="icon-spotify-back" viewBox="0 0 32 32">
+        <path d="M11.03.47a.75.75 0 0 1 0 1.06L4.56 8l6.47 6.47a.75.75 0 1 1-1.06 1.06L2.44 8 9.97.47a.75.75 0 0 1 1.06 0z"></path>
+    </symbol>
+    </defs>
+    </svg>
+
+    <nav>
+    </nav>
+
+    <main id="main">
+    <section id="spotify">
+        <!-- Top level (all) -->
+        <div class="spotify-view" id="spotify-view-all">
+            <div class="spotify-view-header">
+                <div class="spotify-view-title">Spotify</div>
+                <div class="spotify-view-desc">Library</div>
+            </div>
+            <div class="spotify-folders">
+                <button class="spotify-folder" title="General folder" id="to-spotify-view-asian">
+                    <svg class="icon-folder"><use xlink:href="#icon-folder"></use></svg>
+                    <div class="spotify-folder-text">
+                        <div class="spotify-folder-title"></div>
+                        <div class="spotify-folder-desc"></div>
+                    </div>
+                </button>
+            </div>
+            <button class="spotify-playlist" title="Present playlist" id="to-spotify-view-present">
+                <div class="spotify-playlist-img">
+                    <img loading="lazy" src="img/spotify-present.jpg" alt="Present playlist cover">
+                    <div class="spotify-playlist-play"><div></div></div>
+                </div>
+                <div class="spotify-playlist-title"></div>
+                <div class="spotify-playlist-desc"></div>
+            </button>
+            <button class="spotify-playlist" title="Soft playlist" id="to-spotify-view-soft">
+                <div class="spotify-playlist-img">
+                    <img loading="lazy" src="img/spotify-soft.jpg" alt="Soft playlist cover">
+                    <div class="spotify-playlist-play"><div></div></div>
+                </div>
+                <div class="spotify-playlist-title"></div>
+                <div class="spotify-playlist-desc"></div>
+            </button>
+        </div>
+
+        <!-- Asian (folder) -->
+        <div class="spotify-view" id="spotify-view-asian">
+            <div class="spotify-view-header">
+                <button class="spotify-back" title="Go back">
+                    <svg class="icon-spotify-back"><use xlink:href="#icon-spotify-back"></use></svg>
+                </button>
+                <div class="spotify-view-title">Asian</div>
+                <div class="spotify-view-desc"></div>
+            </div>
+            <button class="spotify-playlist" title="Present playlist" id="to-spotify-view-asian2">
+                <div class="spotify-playlist-img">
+                    <img loading="lazy" src="img/spotify-asian2.jpg" alt="Asian playlist cover">
+                    <div class="spotify-playlist-play"><div></div></div>
+                </div>
+                <div class="spotify-playlist-title"></div>
+                <div class="spotify-playlist-desc"></div>
+            </button>
+            <button class="spotify-playlist" title="Soft playlist" id="to-spotify-view-viet">
+                <div class="spotify-playlist-img">
+                    <img loading="lazy" src="img/spotify-viet.jpg" alt="viet playlist cover">
+                    <div class="spotify-playlist-play"><div></div></div>
+                </div>
+                <div class="spotify-playlist-title"></div>
+                <div class="spotify-playlist-desc"></div>
+            </button>
+            <button class="spotify-playlist" title="Soft playlist" id="to-spotify-view-korean">
+                <div class="spotify-playlist-img">
+                    <img loading="lazy" src="img/spotify-korean.jpg" alt="korean playlist cover">
+                    <div class="spotify-playlist-play"><div></div></div>
+                </div>
+                <div class="spotify-playlist-title"></div>
+                <div class="spotify-playlist-desc"></div>
+            </button>
+        </div>
+
+        <!-- Asian 2 (playlist) -->
+        <div class="spotify-view" id="spotify-view-asian2">
+            <div class="spotify-view-header">
+                <button class="spotify-back" title="Go back">
+                    <svg class="icon-spotify-back"><use xlink:href="#icon-spotify-back"></use></svg>
+                </button>
+                <div class="spotify-view-title">Asian</div>
+                <div class="spotify-view-desc">The entirety of Asia in a single playlist</div>
+            </div>
+            <iframe class="spotify-playlist-embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" frameBorder="0" allowfullscreen="" title="Present Spotify playlist" data-src="https://open.spotify.com/embed/playlist/06retRlAghx8unPsrjmLEx?theme=0"></iframe>
+        </div>
+
+        <!-- Viet -->
+        <div class="spotify-view" id="spotify-view-viet">
+            <div class="spotify-view-header">
+                <button class="spotify-back" title="Go back">
+                    <svg class="icon-spotify-back"><use xlink:href="#icon-spotify-back"></use></svg>
+                </button>
+                <div class="spotify-view-title">viet</div>
+                <div class="spotify-view-desc">I solemnly swear I am not completely whitewashed</div>
+            </div>
+            <iframe class="spotify-playlist-embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" frameBorder="0" allowfullscreen="" title="Present Spotify playlist" data-src="https://open.spotify.com/embed/playlist/5aqApBiGX9IbftliCqFYrD?theme=0"></iframe>
+        </div>
+
+        <!-- Korean -->
+        <div class="spotify-view" id="spotify-view-korean">
+            <div class="spotify-view-header">
+                <button class="spotify-back" title="Go back">
+                    <svg class="icon-spotify-back"><use xlink:href="#icon-spotify-back"></use></svg>
+                </button>
+                <div class="spotify-view-title">korean</div>
+                <div class="spotify-view-desc">How it all began</div>
+            </div>
+            <iframe class="spotify-playlist-embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" frameBorder="0" allowfullscreen="" title="Present Spotify playlist" data-src="https://open.spotify.com/embed/playlist/5SbXUjhxxZzGuKoYGy4oMl?theme=0"></iframe>
+        </div>
+
+        <!-- Present -->
+        <div class="spotify-view" id="spotify-view-present">
+            <div class="spotify-view-header">
+                <button class="spotify-back" title="Go back">
+                    <svg class="icon-spotify-back"><use xlink:href="#icon-spotify-back"></use></svg>
+                </button>
+                <div class="spotify-view-title">Present</div>
+                <div class="spotify-view-desc">Everything I actually listen to</div>
+            </div>
+            <iframe class="spotify-playlist-embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" frameBorder="0" allowfullscreen="" title="Present Spotify playlist" data-src="https://open.spotify.com/embed/playlist/2IMvuuOimX7DKPnLMqc1M1?theme=0"></iframe>
+        </div>
+
+        <!-- Soft -->
+        <div class="spotify-view" id="spotify-view-soft">
+            <div class="spotify-view-header">
+                <button class="spotify-back" title="Go back">
+                    <svg class="icon-spotify-back"><use xlink:href="#icon-spotify-back"></use></svg>
+                </button>
+                <div class="spotify-view-title">Soft</div>
+                <div class="spotify-view-desc">late night blues</div>
+            </div>
+            <iframe class="spotify-playlist-embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" frameBorder="0" allowfullscreen="" title="Present Spotify playlist" data-src="https://open.spotify.com/embed/playlist/6zufMXyYd4SQiyXtYs0M4C?theme=0"></iframe>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+    </footer>
+
+    <!-- https://kevq.uk/how-to-create-an-indieweb-profile/ -->
+    <!-- https://indiewebify.me/validate-h-card/ -->
+    <div class="h-card vcard" aria-hidden="true">
+        <!-- About me -->
+        <span class="p-name fn">Andrew Dinh</span>
+        <span class="p-given-name given-name">Andrew</span>
+        <span class="p-additional-name additional-name">K.</span>
+        <span class="p-family-name family-name">Dinh</span>
+        <span class="p-nickname nickname">andrewkdinh</span>
+        <span class="p-sex">Male</span>
+        <span class="p-job-title title">Software Engineer</span>
+        <span class="p-note note">Software engineer developing a better feature. My interests include photography, privacy, &amp; open source software.</span>
+        <!-- Pictures -->
+        <img class="u-logo logo" alt="Logo" src="/images/logo.png">
+        <img class="u-photo photo" alt="Profile" src="/images/profile.png">
+        <!-- My location -->
+        <span class="p-region region">California</span>
+        <span class="p-country-name country-name">United States</span>
+        <!-- Links -->
+        <a class="u-url u-uid url uid" href="https://andrewkdinh.com"></a>
+        <a class="u-url url" rel="me" href="https://github.com/andrewkdinh"></a>
+        <a class="u-url url" rel="me" href="https://www.linkedin.com/in/andrewkdinh-com"></a>
+        <a class="u-url url" rel="me" href="https://www.instagram.com/andrewkdinh/"></a>
+        <a class="u-url url" rel="me" href="https://www.facebook.com/andrewkdinh"></a>
+        <a class="u-url url" rel="me" href="https://twitter.com/andrewkdinh"></a>
+        <a class="u-url url" rel="me" href="https://news.ycombinator.com/user?id=andrewkdinh"></a>
+        <a class="u-url url" rel="me" href="https://www.producthunt.com/@andrewkdinh"></a>
+        <a class="u-url url" rel="me" href="https://www.indiehackers.com/andrewkdinh"></a>
+        <a class="u-url url" rel="me" href="https://dev.to/andrewkdinh"></a>
+        <a class="u-url url" rel="me" href="https://gitlab.com/andrewkdinh"></a>
+        <a class="u-url url" rel="me" href="https://fosstodon.org/@andrewkdinh"></a>
+        <!-- Categories -->
+        <span class="p-category category">Open Source Software</span>
+        <span class="p-category category">Privacy</span>
+        <span class="p-category category">Web Design</span>
+        <span class="p-category category">Self-hosted</span>
+        <span class="p-category category">Docker</span>
+        <span class="p-category category">Programming</span>
+        <span class="p-category category">Photography</span>
+    </div>
+</body>
+</html>
