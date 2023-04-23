@@ -593,134 +593,109 @@ tffRRsorIL6z11w5dJyOS6VimCfAh49xR/4cqBgN
     </nav>
 
     <main id="main">
-    <section id="spotify">
-        <!-- Top level (all) -->
-        <div class="spotify-view" id="spotify-view-all">
-            <div class="spotify-view-header">
-                <div class="spotify-view-title">Spotify</div>
-                <div class="spotify-view-desc">Library</div>
-            </div>
-            <div class="spotify-folders">
-                <button class="spotify-folder" title="General folder" id="to-spotify-view-asian">
-                    <svg class="icon-folder"><use xlink:href="#icon-folder"></use></svg>
-                    <div class="spotify-folder-text">
-                        <div class="spotify-folder-title"></div>
-                        <div class="spotify-folder-desc"></div>
+    <section id="music">
+        <h2>Music Profile</h2>
+
+        <div id="spotify"></div>
+
+        <!-- 3D Slideshow Section --> 
+        <!-- https://codepen.io/jaskiranchhokar/pen/wmGXav -->
+        <div class="artist-wrapper">
+            <h3>Artists</h3>
+            <div id="slideshow">
+                <div class="entire-content">
+                    <div class="content-carrousel">
+                        <figure class="shadow">
+                            <a rel="noopener nofollow" href="https://blackpinkofficial.com/">
+                                <img data-src="img/artist/blackpink.jpg" alt="Blackpink"/>
+                                <figcaption>Blackpink</figcaption>
+                            </a>
+                        </figure>
+                        <figure class="shadow">
+                            <a rel="noopener nofollow" href="https://www.billieeilish.com/">
+                                <img data-src="img/artist/billie-eilish.jpg" alt="Billie Eilish" />
+                                <figcaption>Billie Eilish</figcaption>
+                            </a>
+                        </figure>
+                        <figure class="shadow">
+                            <a rel="noopener nofollow" href="https://en.wikipedia.org/wiki/Chungha">
+                                <img data-src="img/artist/chungha.jpg" alt="Chung Ha" />
+                                <figcaption>Chung Ha</figcaption>
+                            </a>
+                        </figure>
+                        <figure class="shadow">
+                            <a rel="noopener nofollow" href="https://www.charlottelawrence.com/">
+                                <img data-src="img/artist/charlotte-lawrence.jpg" alt="Charlotte Lawrence" />
+                                <figcaption>Charlotte Lawrence</figcaption>
+                            </a>
+                        </figure>
+                        <figure class="shadow">
+                            <a rel="noopener nofollow" href="https://elio.merchtable.com/">
+                                <img data-src="img/artist/elio.jpg" alt="ELIO" />
+                                <figcaption>ELIO</figcaption>
+                            </a>
+                        </figure>
+                        <figure class="shadow">
+                            <a rel="noopener nofollow" href="https://www.instagram.com/iamhalsey/">
+                                <img data-src="img/artist/halsey.jpg" alt="Halsey" />
+                                <figcaption>Halsey</figcaption>
+                            </a>
+                        </figure>
+                        <figure class="shadow">
+                            <a rel="noopener nofollow" href="https://www.madisonbeer.com/">
+                                <img data-src="img/artist/madison-beer.jpg" alt="Madison Beer" />
+                                <figcaption>Madison Beer</figcaption>
+                            </a>
+                        </figure>
+                        <figure class="shadow">
+                            <a rel="noopener nofollow" href="https://www.theweeknd.com/">
+                                <img data-src="img/artist/the-weeknd.jpg" alt="The Weeknd" />
+                                <figcaption>The Weeknd</figcaption>
+                            </a>
+                        </figure>
+                        <figure class="shadow">
+                            <a rel="noopener nofollow" href="https://www.winonaoak.com/">
+                                <!-- <img loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/artist/winona-oak.jpg" alt="Winona Oak" /> -->
+                                <img data-src="img/artist/winona-oak.jpg" alt="Winona Oak" />
+                                <figcaption>Winona Oak</figcaption>
+                            </a>
+                        </figure>
                     </div>
-                </button>
-            </div>
-            <button class="spotify-playlist" title="Present playlist" id="to-spotify-view-present">
-                <div class="spotify-playlist-img">
-                    <img loading="lazy" src="img/spotify-present.jpg" alt="Present playlist cover">
-                    <div class="spotify-playlist-play"><div></div></div>
                 </div>
-                <div class="spotify-playlist-title"></div>
-                <div class="spotify-playlist-desc"></div>
-            </button>
-            <button class="spotify-playlist" title="Soft playlist" id="to-spotify-view-soft">
-                <div class="spotify-playlist-img">
-                    <img loading="lazy" src="img/spotify-soft.jpg" alt="Soft playlist cover">
-                    <div class="spotify-playlist-play"><div></div></div>
-                </div>
-                <div class="spotify-playlist-title"></div>
-                <div class="spotify-playlist-desc"></div>
-            </button>
-        </div>
-
-        <!-- Asian (folder) -->
-        <div class="spotify-view" id="spotify-view-asian">
-            <div class="spotify-view-header">
-                <button class="spotify-back" title="Go back">
-                    <svg class="icon-spotify-back"><use xlink:href="#icon-spotify-back"></use></svg>
-                </button>
-                <div class="spotify-view-title">Asian</div>
-                <div class="spotify-view-desc"></div>
             </div>
-            <button class="spotify-playlist" title="Present playlist" id="to-spotify-view-asian2">
-                <div class="spotify-playlist-img">
-                    <img loading="lazy" src="img/spotify-asian2.jpg" alt="Asian playlist cover">
-                    <div class="spotify-playlist-play"><div></div></div>
-                </div>
-                <div class="spotify-playlist-title"></div>
-                <div class="spotify-playlist-desc"></div>
-            </button>
-            <button class="spotify-playlist" title="Soft playlist" id="to-spotify-view-viet">
-                <div class="spotify-playlist-img">
-                    <img loading="lazy" src="img/spotify-viet.jpg" alt="viet playlist cover">
-                    <div class="spotify-playlist-play"><div></div></div>
-                </div>
-                <div class="spotify-playlist-title"></div>
-                <div class="spotify-playlist-desc"></div>
-            </button>
-            <button class="spotify-playlist" title="Soft playlist" id="to-spotify-view-korean">
-                <div class="spotify-playlist-img">
-                    <img loading="lazy" src="img/spotify-korean.jpg" alt="korean playlist cover">
-                    <div class="spotify-playlist-play"><div></div></div>
-                </div>
-                <div class="spotify-playlist-title"></div>
-                <div class="spotify-playlist-desc"></div>
-            </button>
         </div>
+    </section>
 
-        <!-- Asian 2 (playlist) -->
-        <div class="spotify-view" id="spotify-view-asian2">
-            <div class="spotify-view-header">
-                <button class="spotify-back" title="Go back">
-                    <svg class="icon-spotify-back"><use xlink:href="#icon-spotify-back"></use></svg>
-                </button>
-                <div class="spotify-view-title">Asian</div>
-                <div class="spotify-view-desc">The entirety of Asia in a single playlist</div>
-            </div>
-            <iframe class="spotify-playlist-embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" frameBorder="0" allowfullscreen="" title="Present Spotify playlist" data-src="https://open.spotify.com/embed/playlist/06retRlAghx8unPsrjmLEx?theme=0"></iframe>
-        </div>
-
-        <!-- Viet -->
-        <div class="spotify-view" id="spotify-view-viet">
-            <div class="spotify-view-header">
-                <button class="spotify-back" title="Go back">
-                    <svg class="icon-spotify-back"><use xlink:href="#icon-spotify-back"></use></svg>
-                </button>
-                <div class="spotify-view-title">viet</div>
-                <div class="spotify-view-desc">I solemnly swear I am not completely whitewashed</div>
-            </div>
-            <iframe class="spotify-playlist-embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" frameBorder="0" allowfullscreen="" title="Present Spotify playlist" data-src="https://open.spotify.com/embed/playlist/5aqApBiGX9IbftliCqFYrD?theme=0"></iframe>
-        </div>
-
-        <!-- Korean -->
-        <div class="spotify-view" id="spotify-view-korean">
-            <div class="spotify-view-header">
-                <button class="spotify-back" title="Go back">
-                    <svg class="icon-spotify-back"><use xlink:href="#icon-spotify-back"></use></svg>
-                </button>
-                <div class="spotify-view-title">korean</div>
-                <div class="spotify-view-desc">How it all began</div>
-            </div>
-            <iframe class="spotify-playlist-embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" frameBorder="0" allowfullscreen="" title="Present Spotify playlist" data-src="https://open.spotify.com/embed/playlist/5SbXUjhxxZzGuKoYGy4oMl?theme=0"></iframe>
-        </div>
-
-        <!-- Present -->
-        <div class="spotify-view" id="spotify-view-present">
-            <div class="spotify-view-header">
-                <button class="spotify-back" title="Go back">
-                    <svg class="icon-spotify-back"><use xlink:href="#icon-spotify-back"></use></svg>
-                </button>
-                <div class="spotify-view-title">Present</div>
-                <div class="spotify-view-desc">Everything I actually listen to</div>
-            </div>
-            <iframe class="spotify-playlist-embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" frameBorder="0" allowfullscreen="" title="Present Spotify playlist" data-src="https://open.spotify.com/embed/playlist/2IMvuuOimX7DKPnLMqc1M1?theme=0"></iframe>
-        </div>
-
-        <!-- Soft -->
-        <div class="spotify-view" id="spotify-view-soft">
-            <div class="spotify-view-header">
-                <button class="spotify-back" title="Go back">
-                    <svg class="icon-spotify-back"><use xlink:href="#icon-spotify-back"></use></svg>
-                </button>
-                <div class="spotify-view-title">Soft</div>
-                <div class="spotify-view-desc">late night blues</div>
-            </div>
-            <iframe class="spotify-playlist-embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" frameBorder="0" allowfullscreen="" title="Present Spotify playlist" data-src="https://open.spotify.com/embed/playlist/6zufMXyYd4SQiyXtYs0M4C?theme=0"></iframe>
-        </div>
+    <section id="projects">
+        <h2>Projects</h2>
+        <details>
+            <summary id="project-minecraft-summary">
+                <h3>Minecraft</h3> - 
+                <p>GECA/Gavilan College</p>
+            </summary>
+            <iframe id="project-minecraft" loading="lazy" data-src="https://build.andrewkdinh.com/?hidechat=true&worldname=world&mapname=surface&zoom=3&x=-33&y=64&z=105"></iframe>
+        </details>
+        <details>
+            <summary id="project-plausible-summary">
+                <h3>Website Statistics</h3> - 
+                <p>Plausible Analytics</p>
+            </summary>
+            <iframe id="project-plausible" loading="lazy" data-src="https://plausible.andrewkdinh.com/share/andrewkdinh.com?auth=HIeeVAj-04AgsZ2vBU2Ld&embed=true&theme=dark"></iframe>
+        </details>
+        <details>
+            <summary id="project-dashboard-summary">
+                <h3>Server Dashboard</h3> - 
+                <p>Homer</p>
+            </summary>
+            <iframe id="project-dashboard" loading="lazy" data-src="https://dashboard.andrewkdinh.com"></iframe>
+        </details>
+        <details>
+            <summary id="project-photography-summary">
+                <h3>Photography</h3> - 
+                <p>Portfolio</p>
+            </summary>
+            <iframe id="project-photography" loading="lazy" data-src="https://photography.andrewkdinh.com/"></iframe>
+        </details>
     </section>
     </main>
 

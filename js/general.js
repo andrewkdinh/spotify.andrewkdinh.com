@@ -17,76 +17,9 @@ document.addEventListener('DOMContentLoaded', function(){
         elem.target = "_blank";
     });
 
-    ////////////////////////////////
-    // Spotify
-    ////////////////////////////////
-
-    /*
-    Dynamically get view_names.
-    Dynamically set playlist/folder titles and descriptions.
-    So basically the only things that need to be set are title for folders and
-        and title+description for playlists (per-view)
-    */
-    var view_names = []
-    document.getElementById("spotify").querySelectorAll("button").forEach(button_elem => {
-        let prefix = "to-spotify-view-"
-        if (button_elem.id.startsWith(prefix)) {
-            view_names.push(button_elem.id.slice(prefix.length));
-
-            let elem = document.getElementById(button_elem.id.slice(3))
-            let title = elem.querySelector(".spotify-view-title").textContent
-            let iframe_count = elem.querySelectorAll("iframe").length
-            if (iframe_count > 0) {
-                // Playlist
-                let description = elem.querySelector(".spotify-view-desc").textContent
-                button_elem.querySelector(".spotify-playlist-title").textContent = title;
-                button_elem.querySelector(".spotify-playlist-desc").textContent = description;
-            } else {
-                // Folder
-                let folder_count = elem.querySelectorAll(".spotify-folder").length
-                let playlist_count = elem.querySelectorAll(".spotify-playlist").length
-                var description = "";
-                if (folder_count > 0 && playlist_count > 0) {
-                    description = `${folder_count} folder${folder_count > 1 ? "s" : ""}, ${playlist_count} playlist${playlist_count > 1 ? "s" : ""}`;
-                } else if (folder_count > 0) {
-                    description = `${folder_count} folder${folder_count > 1 ? "s" : ""}`;
-                } else {
-                    description = `${playlist_count} playlist${playlist_count > 1 ? "s" : ""}`;
-                }
-                button_elem.querySelector(".spotify-folder-title").textContent = title;
-                button_elem.querySelector(".spotify-folder-desc").textContent = description;
-                // May want to change this if I want folders to have custom descriptions
-                elem.querySelector(".spotify-view-desc").textContent = description
-            }
-        }
-    });
-
-    var views = [];
-    view_names.forEach(view_name => {
-        let elem_id = "spotify-view-" + view_name
-        document.getElementById("to-" + elem_id).addEventListener("click", function() {
-            let elem = document.getElementById(elem_id);
-            // Load iFrame if one exists
-            elem.querySelectorAll(".spotify-playlist-embed").forEach(iframe_elem => {
-                if (iframe_elem.src == "") {
-                    iframe_elem.src = iframe_elem.dataset.src;
-                }
-            })
-
-            elem.classList.add("spotify-view-test");
-            elem.classList.add("spotify-view-active");
-            views.push(elem);
-        });
-    });
-
-    document.querySelectorAll(".spotify-back").forEach(back_button => {
-        back_button.addEventListener("click", function(elem) {
-            let last_view = views.pop()
-            if (last_view != undefined) {
-                last_view.classList.remove("spotify-view-active")
-            }
-        });
-    });
+    loadSpotifyLibrary();
+    loadArtistSlideshow();
+    loadProjects();
 });
 
 // page is fully loaded, including all frames, objects and images
@@ -114,6 +47,373 @@ window.addEventListener("load", function() {
     };
     */
 });
+
+
+////////////////////////////////
+// Spotify
+////////////////////////////////
+function loadSpotifyLibrary() {
+    // Spotify configuration options
+    const spotify_folders = {
+        "Spotify Library": {
+            "description": "",
+            "folders": ["Asian", "moods", "General"],
+            "playlists": ["Present"]
+        },
+        "Asian": {
+            "folders": [],
+            "playlists": ["asian", "viet", "korean", "japanese", "thai", "filipino", "chinese"]
+        },
+        "moods": {
+            "folders": [],
+            "playlists": ["Soft", "boys ain't shit", "sad", "upbeat smooth", "oop", "broken", "smooth", "lovey dovey", "girlboss", "healing"]
+        },
+        "General": {
+            "folders": [],
+            "playlists": ["Down the middle"]
+        }
+    }
+    const spotify_playlists = {
+        "Present": {
+            "description": "Everything I actually listen to",
+            "id": "2IMvuuOimX7DKPnLMqc1M1"
+        },
+        "Soft": {
+            "description": "late night blues",
+            "id": "6zufMXyYd4SQiyXtYs0M4C"
+        },
+        "boys ain't shit": {
+            "description": "f men, with exceptions",
+            "id": "75aarNiy1HmVOTHfh6xtMR",
+            "image": "boys-aint-shit",
+        },
+        "sad": {
+            "description": "",
+            "id": "65ClET2NwCXm0KIM0tJvjb"
+        },
+        "upbeat smooth": {
+            "description": "",
+            "id": "7yP7soSlWyDKWHvPEK2Myx"
+        },
+        "oop": {
+            "description": "",
+            "id": "5IOQwIjnPtiobQ6qc38Ay1"
+        },
+        "broken": {
+            "description": "rip",
+            "id": "390A5uAD5zQbViVB4GqhZw"
+        },
+        "smooth": {
+            "description": "🌊",
+            "id": "6MPFipDGf3dO6rrP6eEWhA"
+        },
+        "lovey dovey": {
+            "description": "🥹",
+            "id": "5Tm6Elavhf6WFoNRUTZB2v"
+        },
+        "girlboss": {
+            "description": "power",
+            "id": "2asIjRXJVcXdX8VJRnJcid"
+        },
+        "healing": {
+            "description": "",
+            "id": "0i1VftV9sa7gQCtKeVhd9x"
+        },
+        "asian": {
+            "description": "The entirety of Asia in a single playlist",
+            "id": "06retRlAghx8unPsrjmLEx"
+        },
+        "viet": {
+            "description": "I solemnly swear I am not completely whitewashed",
+            "id": "5aqApBiGX9IbftliCqFYrD"
+        },
+        "korean": {
+            "description": "How it all began",
+            "id": "5SbXUjhxxZzGuKoYGy4oMl"
+        },
+        "japanese": {
+            "description": "anime land",
+            "id": "7LEpC1sK8kk44OKn2jNk9u"
+        },
+        "thai": {
+            "description": "pavilion of the enlightened",
+            "id": "5ee1QOp9ykk4XPhj3mfNod"
+        },
+        "filipino": {
+            "description": "",
+            "id": "60qSq8D632pERRtU7VzLRz"
+        },
+        "chinese": {
+            "description": "china rich girlfriend",
+            "id": "4ij0ETHiuyVUKaWuSarX7A"
+        },
+        "Down the middle": {
+            "description": "Universal enjoyment",
+            "id": "7DRLuqvW64z6GkNlPsj8Mc"
+        }
+    }
+
+    const spotify_elem = document.getElementById("spotify");
+    let views = []
+
+    // Create HTML elements
+
+    // Calculate folder descriptions
+    let folder_descriptions = {};
+    for (let folder_title in spotify_folders) {
+        let description = spotify_folders[folder_title]["description"]
+        if (description === undefined) {
+            const folder_count = spotify_folders[folder_title]["folders"].length ?? 0
+            const playlist_count = spotify_folders[folder_title]["playlists"].length ?? 0
+            if (folder_count + playlist_count === 0) {
+                description = "";
+            } else if (folder_count > 0 && playlist_count > 0) {
+                description = `${folder_count} folder${folder_count > 1 ? "s" : ""}, ${playlist_count} playlist${playlist_count > 1 ? "s" : ""}`;
+            } else if (folder_count > 0) {
+                description = `${folder_count} folder${folder_count > 1 ? "s" : ""}`;
+            } else {
+                description = `${playlist_count} playlist${playlist_count > 1 ? "s" : ""}`;
+            }
+        }
+        folder_descriptions[folder_title] = description
+    }
+
+    // Create view for each folder
+    for (let folder_title in spotify_folders) {
+        const is_top_level = folder_title === "Spotify Library";
+
+        const view_elem = document.createElement("div");
+        view_elem.classList = ["spotify-view"]
+        if (is_top_level) {
+            view_elem.classList.add("spotify-view-active")
+        }
+        view_elem.id = `spotify-folder-${folder_title}`
+        spotify_elem.appendChild(view_elem)
+
+        const header_elem = document.createElement("div");
+        header_elem.classList = ["spotify-view-header"]
+        view_elem.appendChild(header_elem);
+
+        if (!is_top_level) {
+            const button_elem = document.createElement("button");
+            button_elem.disabled = true;
+            button_elem.classList = ["spotify-back"];
+            button_elem.addEventListener("click", function() {
+                let last_view = views.pop()
+                if (last_view != undefined) {
+                    view_elem.querySelectorAll("button").forEach(button_elem => {
+                        button_elem.disabled = true;
+                    });
+                    last_view.classList.remove("spotify-view-active")
+                }
+            });
+            header_elem.appendChild(button_elem);
+
+            const svg_elem = document.createElementNS("http://www.w3.org/2000/svg",'svg');
+            svg_elem.classList = ["icon-spotify-back"];
+            button_elem.appendChild(svg_elem)
+
+            const use_elem = document.createElementNS("http://www.w3.org/2000/svg",'use');
+            use_elem.setAttribute("href", "#icon-spotify-back");
+            svg_elem.appendChild(use_elem);
+        }
+
+        const header_title_elem = document.createElement("div");
+        header_title_elem.classList = ["spotify-view-title"]
+        header_title_elem.innerText = folder_title;
+        header_elem.appendChild(header_title_elem);
+
+        const header_desc_elem = document.createElement("div");
+        header_desc_elem.classList = ["spotify-view-desc"];
+        header_desc_elem.innerText = folder_descriptions[folder_title] ?? "";
+        header_elem.appendChild(header_desc_elem);
+
+        // Create folders section
+        const folders_elem = document.createElement("div");
+        folders_elem.classList = ["spotify-folders"]
+        view_elem.appendChild(folders_elem);
+        (spotify_folders[folder_title]["folders"] ?? []).forEach(inner_folder_title => {
+            const button_elem = document.createElement("button")
+            if (!is_top_level) {
+                button_elem.disabled = true;
+            }
+            button_elem.classList = "spotify-folder";
+            button_elem.title = `${inner_folder_title} folder`;
+            button_elem.id = `to-spotify-folder-${inner_folder_title}`;
+            button_elem.addEventListener("click", function() {
+                const elem = document.getElementById(`spotify-folder-${inner_folder_title}`);
+                elem.querySelectorAll("button").forEach(button_elem => {
+                    button_elem.disabled = false;
+                });
+                elem.classList.add("spotify-view-active");
+                views.push(elem);
+            });
+            folders_elem.appendChild(button_elem);
+
+            // https://stackoverflow.com/a/37079831
+            const svg_elem = document.createElementNS("http://www.w3.org/2000/svg",'svg');
+            svg_elem.classList = ["icon-folder"];
+            button_elem.appendChild(svg_elem)
+
+            const use_elem = document.createElementNS("http://www.w3.org/2000/svg",'use');
+            use_elem.setAttribute("href", "#icon-folder");
+            svg_elem.appendChild(use_elem);
+
+            const text_elem = document.createElement("div");
+            text_elem.classList = ["spotify-folder-text"];
+            button_elem.appendChild(text_elem);
+
+            const folder_title_elem = document.createElement("div");
+            folder_title_elem.classList = ["spotify-folder-title"];
+            folder_title_elem.innerText = inner_folder_title;
+            text_elem.appendChild(folder_title_elem);
+
+            const folder_desc_elem = document.createElement("div");
+            folder_desc_elem.classList = ["spotify-folder-desc"];
+            folder_desc_elem.innerText = folder_descriptions[inner_folder_title] ?? "";
+            text_elem.appendChild(folder_desc_elem);
+        })
+
+        // Create playlists section
+        const playlists_list = spotify_folders[folder_title]["playlists"] ?? []
+        for (let i = 0; i < playlists_list.length; i++) {
+            let playlist_title = playlists_list[i];
+
+            const button_elem = document.createElement("button")
+            if (!is_top_level) {
+                button_elem.disabled = true;
+            }
+            button_elem.classList = "spotify-playlist";
+            button_elem.title = `${playlist_title} playlist`;
+            button_elem.id = `to-spotify-playlist-${playlist_title}`;
+            button_elem.addEventListener("click", function() {
+                const elem = document.getElementById(`spotify-playlist-${playlist_title}`);
+                // Load iFrame if one exists
+                elem.querySelectorAll("button").forEach(button_elem => {
+                    button_elem.disabled = false;
+                });
+                elem.querySelectorAll(".spotify-playlist-embed").forEach(iframe_elem => {
+                    if (iframe_elem.src == "") {
+                        let spotify_id = spotify_playlists[playlist_title]["id"];
+                        if (spotify_id != undefined) {
+                            iframe_elem.src = `https://open.spotify.com/embed/playlist/${spotify_id}?theme=0`
+                        }
+                    }
+                })
+                elem.classList.add("spotify-view-active");
+                views.push(elem);
+            });
+            view_elem.appendChild(button_elem);
+
+            const playlist_img_elem = document.createElement("div");
+            playlist_img_elem.classList = ["spotify-playlist-img"];
+            button_elem.appendChild(playlist_img_elem);
+
+            const img_elem = document.createElement("img");
+            img_elem.loading = "lazy";
+            img_elem.src = `img/spotify/${spotify_playlists[playlist_title]["image"] ?? playlist_title.toLowerCase().split(" ").join("-")}.jpg`;
+            img_elem.alt = `${playlist_title} playlist cover`;
+            playlist_img_elem.appendChild(img_elem);
+
+            playlist_img_elem.innerHTML += `<div class="spotify-playlist-play"><div></div></div>`;
+
+            const playlist_title_elem = document.createElement("div");
+            playlist_title_elem.classList = ["spotify-playlist-title"];
+            playlist_title_elem.innerText = playlist_title;
+            button_elem.appendChild(playlist_title_elem);
+
+            const playlist_desc_elem = document.createElement("div");
+            playlist_desc_elem.classList = ["spotify-playlist-desc"];
+            playlist_desc_elem.innerText = spotify_playlists[playlist_title]["description"];
+            button_elem.appendChild(playlist_desc_elem);
+        }
+    };
+
+    // Create view for each playlist
+    for (let playlist_title in spotify_playlists) {
+        const view_elem = document.createElement("div");
+        view_elem.classList = ["spotify-view"]
+        view_elem.id = `spotify-playlist-${playlist_title}`
+        spotify_elem.appendChild(view_elem)
+
+        const header_elem = document.createElement("div");
+        header_elem.classList = ["spotify-view-header"]
+        view_elem.appendChild(header_elem);
+
+        const button_elem = document.createElement("button");
+        button_elem.classList = "spotify-back";
+        button_elem.addEventListener("click", function() {
+            let last_view = views.pop()
+            if (last_view != undefined) {
+                view_elem.querySelectorAll("button").forEach(button_elem => {
+                    button_elem.disabled = true;
+                });
+                last_view.classList.remove("spotify-view-active")
+            }
+        });
+        header_elem.appendChild(button_elem);
+
+        const svg_elem = document.createElementNS("http://www.w3.org/2000/svg",'svg');
+        svg_elem.classList = ["icon-spotify-back"];
+        button_elem.appendChild(svg_elem)
+
+        const use_elem = document.createElementNS("http://www.w3.org/2000/svg",'use');
+        use_elem.setAttribute("href", "#icon-spotify-back");
+        svg_elem.appendChild(use_elem);
+
+        const header_title_elem = document.createElement("a");
+        header_title_elem.relList = ["noopener", "nofollow"]
+        header_title_elem.href = `https://open.spotify.com/playlist/${spotify_playlists[playlist_title]["id"]}`
+        header_title_elem.target = "_blank";
+        header_title_elem.classList = ["spotify-view-title"]
+        header_title_elem.innerText = playlist_title;
+        header_elem.appendChild(header_title_elem);
+
+        const header_desc_elem = document.createElement("div");
+        header_desc_elem.classList = ["spotify-view-desc"];
+        header_desc_elem.innerText = spotify_playlists[playlist_title]["description"] ?? "";
+        header_elem.appendChild(header_desc_elem);
+
+        const iframe_elem = document.createElement("iframe");
+        iframe_elem.classList = ["spotify-playlist-embed"];
+        iframe_elem.loading = "lazy";
+        iframe_elem.referrerPolicy = "strict-origin-when-cross-origin";
+        iframe_elem.allowFullscreen = "";
+        iframe_elem.title = `${playlist_title} Spotify playlist`;
+        view_elem.appendChild(iframe_elem);
+    }
+}
+
+////////////////////////////////
+// Artist slideshow
+////////////////////////////////
+function loadArtistSlideshow() {
+    // Needed because Safari doesn't load the images when they're lazy
+    const observer = new IntersectionObserver(function(entries, observer) {
+        if (entries[0].isIntersecting) {
+            // Might as well load playlist images early too
+            // const images = document.querySelectorAll("#music .shadow img, #music .playlist-card img");
+            const images = document.querySelectorAll("#music .shadow img");
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+            observer.disconnect();
+        }
+    }, {threshold: 0});
+
+    observer.observe(document.getElementById("music"));
+}
+
+function loadProjects() {
+    document.querySelectorAll("#projects summary").forEach(elem => {
+        elem.onclick = function() {
+            let iframe_elem = document.getElementById(elem.id.replace("-summary", ""))
+            if (iframe_elem && iframe_elem.dataset.src) {
+                iframe_elem.src = iframe_elem.dataset.src;
+            }
+        }
+    })
+}
 
 // General functions
 function sleep(ms) {
