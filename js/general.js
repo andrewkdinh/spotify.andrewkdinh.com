@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     loadSpotifyLibrary();
     loadArtistSlideshow();
-    loadProjects();
+    // loadProjects();
 });
 
 // page is fully loaded, including all frames, objects and images
@@ -57,20 +57,28 @@ function loadSpotifyLibrary() {
     const spotify_folders = {
         "Spotify Library": {
             "description": "",
-            "folders": ["Asian", "moods", "General"],
+            "folders": ["general", "asian", "moods", "themes", "languages"],
             "playlists": ["Present"]
         },
-        "Asian": {
+        "asian": {
             "folders": [],
             "playlists": ["asian", "viet", "korean", "japanese", "thai", "filipino", "chinese"]
         },
         "moods": {
             "folders": [],
-            "playlists": ["Soft", "boys ain't shit", "sad", "upbeat smooth", "oop", "broken", "smooth", "lovey dovey", "girlboss", "healing"]
+            "playlists": ["boys ain't shit", "sad", "upbeat smooth", "oop", "broken", "smooth", "lovey dovey", "girlboss", "healing"]
         },
-        "General": {
+        "general": {
             "folders": [],
-            "playlists": ["Down the middle"]
+            "playlists": ["Down the middle", "n00b"]
+        },
+        "themes": {
+            "folders": [],
+            "playlists": ["Soft", "Acoustic", "X"]
+        },
+        "languages": {
+            "folders": [],
+            "playlists": ["spanish"]
         }
     }
     const spotify_playlists = {
@@ -150,6 +158,22 @@ function loadSpotifyLibrary() {
         "Down the middle": {
             "description": "Universal enjoyment",
             "id": "7DRLuqvW64z6GkNlPsj8Mc"
+        },
+        "spanish": {
+            "description": "",
+            "id": "1II9EjZWmyJ0P11CqCuBSC"
+        },
+        "n00b": {
+            "description": "throw it back",
+            "id": "5vNcWJaSHWZovnqJJufwmi"
+        },
+        "Acoustic": {
+            "description": "",
+            "id": "7cjU25kGWMzQpH112OKqBC"
+        },
+        "X": {
+            "description": "ho ho ho",
+            "id": "3RKkec4zM4qs5GNWBed3sX"
         }
     }
 
@@ -404,6 +428,9 @@ function loadArtistSlideshow() {
     observer.observe(document.getElementById("music"));
 }
 
+////////////////////////////////
+// Load project iFrames
+////////////////////////////////
 function loadProjects() {
     document.querySelectorAll("#projects summary").forEach(elem => {
         elem.onclick = function() {
