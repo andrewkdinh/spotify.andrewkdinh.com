@@ -66,7 +66,7 @@ function loadSpotifyLibrary() {
         },
         "moods": {
             "folders": [],
-            "playlists": ["boys ain't shit", "sad", "upbeat smooth", "oop", "broken", "smooth", "lovey dovey", "girlboss", "healing"]
+            "playlists": ["boys ain't shit", "sad", "upbeat smooth", "broken", "smooth", "lovey dovey", "girlboss", "healing"]
         },
         "general": {
             "folders": [],
@@ -83,7 +83,7 @@ function loadSpotifyLibrary() {
     }
     const spotify_playlists = {
         "Present": {
-            "description": "Everything I actually listen to",
+            "description": "everything I actually listen to",
             "id": "2IMvuuOimX7DKPnLMqc1M1"
         },
         "Soft": {
@@ -91,32 +91,28 @@ function loadSpotifyLibrary() {
             "id": "6zufMXyYd4SQiyXtYs0M4C"
         },
         "boys ain't shit": {
-            "description": "f men, with exceptions",
+            "description": "Ugh",
             "id": "75aarNiy1HmVOTHfh6xtMR",
             "image": "boys-aint-shit",
         },
         "sad": {
-            "description": "",
+            "description": "*sigh*",
             "id": "65ClET2NwCXm0KIM0tJvjb"
         },
         "upbeat smooth": {
-            "description": "",
+            "description": "euphoria",
             "id": "7yP7soSlWyDKWHvPEK2Myx"
         },
-        "oop": {
-            "description": "",
-            "id": "5IOQwIjnPtiobQ6qc38Ay1"
-        },
         "broken": {
-            "description": "rip",
+            "description": "We started out as strangers, now we're strangers again",
             "id": "390A5uAD5zQbViVB4GqhZw"
         },
         "smooth": {
-            "description": "🌊",
+            "description": "like water",
             "id": "6MPFipDGf3dO6rrP6eEWhA"
         },
         "lovey dovey": {
-            "description": "🥹",
+            "description": "*mwah*",
             "id": "5Tm6Elavhf6WFoNRUTZB2v"
         },
         "girlboss": {
@@ -124,7 +120,7 @@ function loadSpotifyLibrary() {
             "id": "2asIjRXJVcXdX8VJRnJcid"
         },
         "healing": {
-            "description": "",
+            "description": "maybe things will be ok",
             "id": "0i1VftV9sa7gQCtKeVhd9x"
         },
         "asian": {
@@ -136,11 +132,11 @@ function loadSpotifyLibrary() {
             "id": "5aqApBiGX9IbftliCqFYrD"
         },
         "korean": {
-            "description": "How it all began",
+            "description": "k, time for drama",
             "id": "5SbXUjhxxZzGuKoYGy4oMl"
         },
         "japanese": {
-            "description": "anime land",
+            "description": "Omae wa mou shindeiru",
             "id": "7LEpC1sK8kk44OKn2jNk9u"
         },
         "thai": {
@@ -148,7 +144,7 @@ function loadSpotifyLibrary() {
             "id": "5ee1QOp9ykk4XPhj3mfNod"
         },
         "filipino": {
-            "description": "",
+            "description": "something about nurses",
             "id": "60qSq8D632pERRtU7VzLRz"
         },
         "chinese": {
