@@ -69,8 +69,12 @@ function loadSpotifyLibrary() {
             "playlists": ["boys ain't shit", "sad", "upbeat smooth", "smooth", "girlboss", "recovery", "dangerous woman", "songs to scream in the car"]
         },
         "relationships": {
+            "folders": ["aftermath"],
+            "playlists": ["lovey dovey"]
+        },
+        "aftermath": {
             "folders": [],
-            "playlists": ["lovey dovey", "u suck", "the one that got away", "cheater", "broken", "won the breakup", "ur new girl"]
+            "playlists": ["u suck", "the one that got away", "cheater", "broken", "won the breakup", "ur new girl"]
         },
         "general": {
             "folders": [],
@@ -78,7 +82,7 @@ function loadSpotifyLibrary() {
         },
         "themes": {
             "folders": [],
-            "playlists": ["Soft", "Acoustic", "X"]
+            "playlists": ["Soft", "Acoustic", "X", "Soundtracks"]
         },
         "languages": {
             "folders": [],
@@ -96,10 +100,6 @@ function loadSpotifyLibrary() {
             "id": "5aywWsI6cZxXT3uvM8P60s"
         },
         // Moods
-        "Soft": {
-            "description": "late night blues",
-            "id": "6zufMXyYd4SQiyXtYs0M4C"
-        },
         "boys ain't shit": {
             "description": "Is it really that hard not to be a dick",
             "id": "75aarNiy1HmVOTHfh6xtMR",
@@ -200,6 +200,11 @@ function loadSpotifyLibrary() {
             "description": "throw it back",
             "id": "5vNcWJaSHWZovnqJJufwmi"
         },
+        // Themes
+        "Soft": {
+            "description": "late night blues",
+            "id": "6zufMXyYd4SQiyXtYs0M4C"
+        },
         "Acoustic": {
             "description": "",
             "id": "7cjU25kGWMzQpH112OKqBC"
@@ -207,6 +212,10 @@ function loadSpotifyLibrary() {
         "X": {
             "description": "ho ho ho",
             "id": "3RKkec4zM4qs5GNWBed3sX"
+        },
+        "Soundtracks": {
+            "description": "",
+            "id": "39D8f1tDQw7Gj6HGimZr4h"
         },
         // Languages
         "spanish": {
