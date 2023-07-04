@@ -57,8 +57,8 @@ function loadSpotifyLibrary() {
     const spotify_folders = {
         "Spotify Library": {
             "description": "",
-            "folders": ["general", "asian", "moods", "themes", "languages"],
-            "playlists": ["Present"]
+            "folders": ["general", "asian", "moods", "themes", "relationships", "languages"],
+            "playlists": ["Present", "Top Tier"]
         },
         "asian": {
             "folders": [],
@@ -66,7 +66,11 @@ function loadSpotifyLibrary() {
         },
         "moods": {
             "folders": [],
-            "playlists": ["boys ain't shit", "sad", "upbeat smooth", "broken", "smooth", "lovey dovey", "girlboss", "healing"]
+            "playlists": ["boys ain't shit", "sad", "upbeat smooth", "smooth", "girlboss", "recovery", "dangerous woman", "songs to scream in the car"]
+        },
+        "relationships": {
+            "folders": [],
+            "playlists": ["lovey dovey", "u suck", "the one that got away", "cheater", "broken", "won the breakup", "ur new girl"]
         },
         "general": {
             "folders": [],
@@ -78,51 +82,87 @@ function loadSpotifyLibrary() {
         },
         "languages": {
             "folders": [],
-            "playlists": ["spanish"]
+            "playlists": ["spanish", "french", "desi", "russian", "italian", "finnish"]
         }
     }
     const spotify_playlists = {
+        // Top
         "Present": {
             "description": "everything I actually listen to",
             "id": "2IMvuuOimX7DKPnLMqc1M1"
         },
+        "Top Tier": {
+            "description": "*chef’s kiss*",
+            "id": "5aywWsI6cZxXT3uvM8P60s"
+        },
+        // Moods
         "Soft": {
             "description": "late night blues",
             "id": "6zufMXyYd4SQiyXtYs0M4C"
         },
         "boys ain't shit": {
-            "description": "Ugh",
+            "description": "Is it really that hard not to be a dick",
             "id": "75aarNiy1HmVOTHfh6xtMR",
             "image": "boys-aint-shit",
         },
         "sad": {
-            "description": "*sigh*",
+            "description": "I just want to be sad",
             "id": "65ClET2NwCXm0KIM0tJvjb"
         },
         "upbeat smooth": {
             "description": "euphoria",
             "id": "7yP7soSlWyDKWHvPEK2Myx"
         },
-        "broken": {
-            "description": "We started out as strangers, now we're strangers again",
-            "id": "390A5uAD5zQbViVB4GqhZw"
-        },
         "smooth": {
             "description": "like water",
             "id": "6MPFipDGf3dO6rrP6eEWhA"
-        },
-        "lovey dovey": {
-            "description": "*mwah*",
-            "id": "5Tm6Elavhf6WFoNRUTZB2v"
         },
         "girlboss": {
             "description": "power",
             "id": "2asIjRXJVcXdX8VJRnJcid"
         },
-        "healing": {
-            "description": "maybe things will be ok",
+        "recovery": {
+            "description": "The darkness always fades out",
+            "id": "0aRWN4ZbSmqWfSuIgyWvIE"
+        },
+        "dangerous woman": {
+            "description": "Don’t piss her off",
+            "id": "5dNPaDu2H7Pxd0F0UHy3XO"
+        },
+        "songs to scream in the car": {
+            "description": "tearjerkers",
+            "id": "10dq7z7jip4xB1lNMechwy"
+        },
+        // Relationships
+        "lovey dovey": {
+            "description": "ur cute",
+            "id": "5Tm6Elavhf6WFoNRUTZB2v"
+        },
+        "u suck": {
+            "description": "you were a waste of time",
+            "id": "0oEahQmxBwxUPNc2WlcrKG"
+        },
+        "the one that got away": {
+            "description": "In another life...",
+            "id": "4ZdQXB3I27Se0CMZZU6CSP"
+        },
+        "cheater": {
+            "description": "was she worth it?",
+            "id": "7Kg5LyN9syUs3CXuj5bC0H"
+        },
+        "broken": {
+            "description": "We started out as strangers, now we're strangers again",
+            "id": "390A5uAD5zQbViVB4GqhZw"
+        },
+        "won the breakup": {
+            "description": "Not sad anymore",
             "id": "0i1VftV9sa7gQCtKeVhd9x"
         },
+        "ur new girl": {
+            "description": "I'm not her",
+            "id": "5kQAY69PJcsbVqszuofZ0O"
+        },
+        // Asian
         "asian": {
             "description": "The entirety of Asia in a single playlist",
             "id": "06retRlAghx8unPsrjmLEx"
@@ -151,13 +191,10 @@ function loadSpotifyLibrary() {
             "description": "china rich girlfriend",
             "id": "4ij0ETHiuyVUKaWuSarX7A"
         },
+        // General
         "Down the middle": {
             "description": "Universal enjoyment",
             "id": "7DRLuqvW64z6GkNlPsj8Mc"
-        },
-        "spanish": {
-            "description": "",
-            "id": "1II9EjZWmyJ0P11CqCuBSC"
         },
         "n00b": {
             "description": "throw it back",
@@ -170,6 +207,31 @@ function loadSpotifyLibrary() {
         "X": {
             "description": "ho ho ho",
             "id": "3RKkec4zM4qs5GNWBed3sX"
+        },
+        // Languages
+        "spanish": {
+            "description": "Hola, soy Dora!",
+            "id": "1II9EjZWmyJ0P11CqCuBSC"
+        },
+        "french": {
+            "description": "bon appétit",
+            "id": "3qV1SOvuTMZCIohZx62vww"
+        },
+        "desi": {
+            "description": "bollywood",
+            "id": "29YTOEFbW7jd9vRj1iQtlz"
+        },
+        "russian": {
+            "description": "",
+            "id": "0RoOK9nxxqX8RegTNebOlc"
+        },
+        "italian": {
+            "description": "",
+            "id": "2whi2snJbxNYfaHgDe2obb"
+        },
+        "finnish": {
+            "description": "",
+            "id": "5V9Bj29poxkWIF2qG51N2Z"
         }
     }
 
@@ -298,6 +360,7 @@ function loadSpotifyLibrary() {
         const playlists_list = spotify_folders[folder_title]["playlists"] ?? []
         for (let i = 0; i < playlists_list.length; i++) {
             let playlist_title = playlists_list[i];
+            console.log(playlist_title)
 
             const button_elem = document.createElement("button")
             if (!is_top_level) {
