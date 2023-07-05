@@ -69,6 +69,8 @@ SPOTIFY
     background-color: #121212;
     width: 100vw;
     height: 100vh;
+    /* https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/ */
+    height: 100svh;
     /*
     height: 30rem;
     width: 90vw;
@@ -107,7 +109,6 @@ SPOTIFY
 .spotify-view-active {
     transform: translateX(0);
     opacity: 1;
-    display: flex;
 
     overflow-x: auto;
 }
@@ -117,7 +118,6 @@ SPOTIFY
     width: 100%;
     text-align: center;
 
-    height: 2.5rem;
     padding: 0 2rem;
 }
 
