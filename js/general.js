@@ -369,7 +369,6 @@ function loadSpotifyLibrary() {
         const playlists_list = spotify_folders[folder_title]["playlists"] ?? []
         for (let i = 0; i < playlists_list.length; i++) {
             let playlist_title = playlists_list[i];
-            console.log(playlist_title)
 
             const button_elem = document.createElement("button")
             if (!is_top_level) {
